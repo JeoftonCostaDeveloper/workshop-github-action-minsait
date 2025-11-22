@@ -23,6 +23,7 @@ jobs:
             #       npm run test
             #       echo "Terceira instrução YAML"
     test:
+        needs: build
         name: Job de testes
         runs-on: ubuntu-latest
         steps:
