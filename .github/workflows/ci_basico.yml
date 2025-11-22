@@ -1,16 +1,18 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-#   push:
-#     branches: [develop, homolog]
-#   pull_request:
-    # branches: [ master ]
-  workflow_dispatch:
+  push:
+    branches: [develop, homolog]
+  pull_request:
+    branches: [ master ]
+#   workflow_dispatch:
+env:
+  NOME_DO_PROJETO: Meu Projeto da NASA
 jobs:
   build:
     name: Job de build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Utilizando action do github
+      - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
         run: echo "Fui Brasil!"
