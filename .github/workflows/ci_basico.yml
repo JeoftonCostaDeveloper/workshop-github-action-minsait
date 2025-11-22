@@ -1,10 +1,11 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ master ]
+#   push:
+#     branches: [develop, homolog]
+#   pull_request:
+    # branches: [ master ]
+  workflow_dispatch:
 jobs:
   build:
     name: Job de build
@@ -12,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Utilizando action do github
-        run: echo "Cheguei! Cheguei Brasil!"
+        run: echo "Fui Brasil!"
