@@ -1,7 +1,8 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-  push
+  push:
+    branches: [ master ]
 jobs:
   build:
     name: Job de build
