@@ -4,7 +4,7 @@ on:
     push:
         branches: [develop, homolog]
     pull_request:
-        branches: [master]
+        branches: [develop]
 #   workflow_dispatch:
 env:
     NOME_DO_PROJETO: Meu Projeto da NASA
