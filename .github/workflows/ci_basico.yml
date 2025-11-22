@@ -1,10 +1,10 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-    push:
-        branches: [develop, homolog]
+    # push:
+    #     branches: [develop, homolog]
     pull_request:
-        branches: [develop]
+        branches: [master]
 #   workflow_dispatch:
 env:
     NOME_DO_PROJETO: Meu Projeto da NASA
