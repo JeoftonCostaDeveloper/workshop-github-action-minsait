@@ -8,6 +8,7 @@ on:
 #   workflow_dispatch:
 env:
   NOME_DO_PROJETO: Meu Projeto da NASA
+  CONNECTION: ${{secrets.CONNECTION}}
 jobs:
   build:
     name: Job de build
