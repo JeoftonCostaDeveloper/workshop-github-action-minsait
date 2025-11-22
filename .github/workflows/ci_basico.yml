@@ -1,19 +1,24 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-  push:
-    branches: [develop, homolog]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [develop, homolog]
+    pull_request:
+        branches: [master]
 #   workflow_dispatch:
 env:
-  NOME_DO_PROJETO: Meu Projeto da NASA
-  CONNECTION: ${{secrets.CONNECTION}}
+    NOME_DO_PROJETO: Meu Projeto da NASA
+    CONNECTION: ${{secrets.CONNECTION}}
 jobs:
-  build:
-    name: Job de build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
-        run: echo "O nome do meu projeto é:\ ${{secrets.CONNECTION}}"
+    build:
+        name: Job de build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
+              run: echo "O nome do meu projeto é:\ ${{secrets.CONNECTION}}"
+            - name: Run com múltiplas linhas
+              run: |
+                  echo "Primeira instrução YAML"
+                  echo "Segunda instrução YAML"
+                  echo "Terceira instrução YAML"
