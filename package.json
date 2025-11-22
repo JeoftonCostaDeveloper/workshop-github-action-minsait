@@ -1,0 +1,22 @@
+{
+  "name": "workshop-github-action-minsait",
+  "version": "1.0.0",
+  "description": "Worhshop Sobre o Uso das Github Actions",
+  "main": "index.js",
+  "scripts": {
+    "start": "ng serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeoftonCostaDeveloper/workshop-github-action-minsait.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JeoftonCostaDeveloper/workshop-github-action-minsait/issues"
+  },
+  "homepage": "https://github.com/JeoftonCostaDeveloper/workshop-github-action-minsait#readme"
+}

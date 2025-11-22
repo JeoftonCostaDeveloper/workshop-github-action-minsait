@@ -1,16 +1,33 @@
 # Criando nosso arquivo de workflow
 name: Meu Primeiro Workflow
 on:
-#   push:
-#     branches: [develop, homolog]
-#   pull_request:
-    # branches: [ master ]
-  workflow_dispatch:
+    push:
+        branches: [develop, homolog]
+    pull_request:
+        branches: [master]
+#   workflow_dispatch:
+env:
+    NOME_DO_PROJETO: Meu Projeto da NASA
+    CONNECTION: ${{secrets.CONNECTION}}
 jobs:
-  build:
-    name: Job de build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Utilizando action do github
-        run: echo "Fui Brasil!"
+    build:
+        name: Job de build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
+              run: echo "O nome do meu projeto é:\ ${{secrets.CONNECTION}}"
+            # - name: Run com múltiplas linhas
+            #   run: |
+            #       npm install
+            #       npm run test
+            #       echo "Terceira instrução YAML"
+    test:
+        needs: build
+        name: Job de testes
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Demonstrando a execução de um job de teste ${{github.ref}}
+              if: github.ref == 'refs/heads/master'
+              run: echo "Oi! Eu sou o job de teste..."
