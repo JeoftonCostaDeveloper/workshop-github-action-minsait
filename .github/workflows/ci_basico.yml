@@ -3,7 +3,7 @@ name: Meu Primeiro Workflow
 on:
     # push:
     #     branches: [develop, homolog]
-    pull_request:
+    push:
         branches: [master]
 #   workflow_dispatch:
 env:
