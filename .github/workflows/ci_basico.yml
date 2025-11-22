@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
-        run: echo "O nome do meu projeto é:\ ${{env.NOME_DO_PROJETO}}"
+        run: echo "O nome do meu projeto é:\ ${{secrets.CONNECTION}}"
