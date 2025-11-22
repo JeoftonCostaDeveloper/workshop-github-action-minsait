@@ -28,6 +28,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Demonstrando a execução de um job de teste ${{github.event_name}}
-              if: github.ref != 'refs/heads/develop'
+            - name: Demonstrando a execução de um job de teste ${{github.ref}}
+              if: github.ref == 'refs/heads/master'
               run: echo "Oi! Eu sou o job de teste..."
