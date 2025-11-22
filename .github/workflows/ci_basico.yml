@@ -17,8 +17,15 @@ jobs:
             - uses: actions/checkout@v4
             - name: Utilizando action do github ${{env.NOME_DO_PROJETO}}
               run: echo "O nome do meu projeto é:\ ${{secrets.CONNECTION}}"
-            - name: Run com múltiplas linhas
-              run: |
-                  npm install
-                  npm run test
-                  echo "Terceira instrução YAML"
+            # - name: Run com múltiplas linhas
+            #   run: |
+            #       npm install
+            #       npm run test
+            #       echo "Terceira instrução YAML"
+    test:
+        name: Job de testes
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Demonstrando a execução de um job de teste
+              run: echo "Oi! Eu sou o job de teste..."
