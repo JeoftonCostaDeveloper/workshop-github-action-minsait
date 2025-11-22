@@ -5,6 +5,7 @@ on:
     branches: [develop, homolog]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 jobs:
   build:
     name: Job de build
