@@ -30,6 +30,17 @@ jobs:
             - uses: actions/checkout@v4
             - name: Demonstrando a execução de um job de teste ${{github.ref}}
               if: github.ref == 'refs/heads/master'
+               run: |
+                echo "Oi! Eu sou o job de teste..."
+                echo "Oi! Eu fui o job de teste..."
+    release:
+        needs: build
+        name: Job de testes
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Demonstrando a execução de um job de teste ${{github.ref}}
+              if: failure()
               run: |
                 echo "Oi! Eu sou o job de teste..."
                 echo "Oi! Eu fui o job de teste..."
