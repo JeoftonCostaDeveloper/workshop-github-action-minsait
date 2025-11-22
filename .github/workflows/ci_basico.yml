@@ -28,5 +28,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Demonstrando a execução de um job de teste
+            - name: Demonstrando a execução de um job de teste ${{github.event_name}}
               run: echo "Oi! Eu sou o job de teste..."
