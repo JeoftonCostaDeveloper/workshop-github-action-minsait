@@ -34,8 +34,8 @@ jobs:
                 echo "Oi! Eu sou o job de teste..."
                 echo "Oi! Eu fui o job de teste..."
     release:
-        needs: build
-        name: Job de testes
+        needs: test
+        name: Job de release
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
