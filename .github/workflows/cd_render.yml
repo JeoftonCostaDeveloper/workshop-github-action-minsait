@@ -1,7 +1,7 @@
 name: CD - Deploy para Render
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
