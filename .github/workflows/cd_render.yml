@@ -1,4 +1,4 @@
-name: CD - Deploy to Render
+name: CD - Deploy para Render
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to Render
+    name: Executando deploy no Render
     runs-on: ubuntu-latest
 
     environment:
