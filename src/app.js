@@ -27,13 +27,16 @@ app.get("/items/:id", (req, res) => {
 
 // POST - criar
 app.post("/items", (req, res) => {
-  const { name } = req.body;
+  const { name, age } = req.body;
+
   if (!name) {
     return res.status(400).json({ message: "Name is required" });
   }
-  const newItem = data.create(name);
+
+  const newItem = data.create(name, age);
   res.status(201).json(newItem);
 });
+
 
 // PUT - atualizar
 app.put("/items/:id", (req, res) => {

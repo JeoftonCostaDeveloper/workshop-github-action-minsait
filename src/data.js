@@ -6,11 +6,11 @@ module.exports = {
 
   getById: (id) => items.find(item => item.id === id),
 
-  create: (name) => {
-    const newItem = { id: nextId++, name };
-    items.push(newItem);
-    return newItem;
-  },
+  create: (name, age) => {
+  const newItem = { id: nextId++, name, age };
+  items.push(newItem);
+  return newItem;
+},
 
   update: (id, name) => {
     const item = items.find(item => item.id === id);
